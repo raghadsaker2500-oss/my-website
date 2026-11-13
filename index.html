@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <!-- Set the document encoding and modern browser compatibility -->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/jpeg" href="assets/img/svu_logo.jpg" />
+    <title>الرئيسية | دليل فعاليات الجامعة الافتراضية BWP401</title>
+    
+    <!-- Load clear, readable Arabic fonts (Cairo and Tajawal) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&family=Tajawal:wght@400;500;700&display=swap" rel="stylesheet" />
+    
+    <!-- Load the Bootstrap 5 RTL library from the CDN -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.rtl.min.css" />
+    
+    <!-- Link the project's custom stylesheet -->
+    <link rel="stylesheet" href="assets/css/styles.css" />
+</head>
+<body>
+
+    <!-- ========================================== -->
+    <!-- Header and top navigation bar -->
+    <!-- ========================================== -->
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-dark site-navbar sticky-top py-2 shadow-sm">
+            <div class="container">
+                <a class="navbar-brand d-inline-flex align-items-center gap-2 fw-bold" href="index.html">
+                    <img src="assets/img/logo.svg" alt="شعار الجامعة الافتراضية السورية" class="navbar-brand-logo" width="40" height="40" />
+                    <div>
+                        <span class="d-block fs-5">دليل فعاليات الجامعة الافتراضية</span>
+                        <small class="d-block fw-normal" style="font-size: 0.75rem;">Syrian Virtual University - BWP401</small>
+                    </div>
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavbar" aria-controls="mainNavbar" aria-expanded="false" aria-label="تبديل القائمة">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="mainNavbar">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0 gap-1">
+                        <li class="nav-item"><a class="nav-link active" aria-current="page" href="index.html">الرئيسية</a></li>
+                        <li class="nav-item"><a class="nav-link" href="events.html">كل الفعاليات</a></li>
+                        <li class="nav-item"><a class="nav-link" href="about.html">عن الدليل</a></li>
+                        <li class="nav-item"><a class="nav-link" href="contact.html">اتصل بنا</a></li>
+                    </ul>
+                    <div class="d-inline-flex align-items-center gap-2 mt-2 mt-lg-0">
+                        <button id="darkModeToggle" type="button" aria-pressed="false" aria-label="تفعيل الوضع الليلي" class="btn btn-outline-light btn-sm">
+                            <img id="themeIcon" src="assets/icons/sun-fill.svg" alt="" class="ui-icon" aria-hidden="true" width="16" height="16" />
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <section class="pagehero home-hero">
+        <div class="container">
+            <div class="row align-items-center g-4">
+                <div class="col-lg-5">
+                    <span class="hero-eyebrow">مجتمع الجامعة الافتراضية السورية</span>
+                    <h1>فعاليات تجمعنا وتلهمنا.</h1>
+                    <p class="mb-0">اكتشف فعاليات جامعتك، وكن جزءًا من تجربة طلابية مليئة بالمعرفة والإبداع.</p>
+                </div>
+                <div class="col-lg-7">
+                    <section class="hero-table card shadow-sm border-0 rounded-4" aria-label="جدول المشاركين">
+                        <div class="card-header py-3 border-bottom rounded-top-4">
+                            <h2 class="h5 fw-bold mb-0">أسماء وأرقام الطلاب المشاركين في المشروع (BWP401)</h2>
+                        </div>
+                        <div class="card-body">
+                            <div class="table-responsive">
+                                <table class="table table-bordered table-striped text-center align-middle mb-0">
+                                    <thead class="table-light">
+                                        <tr>
+                                            <th scope="col">م</th>
+                                            <th scope="col">اسم الطالب</th>
+                                            <th scope="col">الرقم الجامعي (ID)</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr><td>1</td><td>يمام عبد القادر</td><td>yamam_354030</td></tr>
+                                        <tr><td>2</td><td>صالح الشحاذه</td><td>saleh_270393</td></tr>
+                                        <tr><td>3</td><td>رغد صقر</td><td>raghad_297499</td></tr>
+                                        <tr><td>4</td><td>سارة الصيرفي</td><td>sara_329870</td></tr>
+                                        <tr><td>5</td><td>سارة مصفرة</td><td>sara_295933</td></tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main content of the home page -->
+    <main class="py-4">
+        <div class="container">
+
+            <!-- Section 1: This week's featured events carousel -->
+            <section class="mb-5" aria-label="فعاليات بارزة">
+                <h2 class="h4 fw-bold mb-3">فعاليات بارزة هذا الأسبوع</h2>
+               <div id="featuredCarousel" class="carousel slide shadow-sm rounded-4 overflow-hidden mb-5" data-bs-ride="carousel">
+  <div class="carousel-indicators">
+    <button type="button" data-bs-target="#featuredCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+    <button type="button" data-bs-target="#featuredCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+    <button type="button" data-bs-target="#featuredCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+  </div>
+  
+  <div class="carousel-inner">
+    <!-- الشريحة الأولى: مؤتمر الذكاء الاصطناعي -->
+    <div class="carousel-item active" data-bs-interval="4000">
+      <img src="assets/img/photo-1516321318423-f06f85e504b3.avif" class="d-block w-100" style="height: 380px; object-fit: cover;" alt="مؤتمر الذكاء الاصطناعي">
+      <div class="carousel-caption d-none d-md-block bg-dark bg-opacity-75 rounded-3 p-3">
+        <h3 class="h5 fw-bold text-white">مؤتمر الذكاء الاصطناعي وتقنيات الويب الحديثة 2026</h3>
+        <p class="small text-white-50">ملتقى علمي يستعرض أحدث تطبيقات الذكاء الاصطناعي وتطوير تطبيقات الويب.</p>
+        <a href="event.html?id=1" class="btn btn-primary btn-sm">عرض التفاصيل</a>
+      </div>
+    </div>
+
+    <!-- الشريحة الثانية: ملتقى الطلاب والأفكار -->
+    <div class="carousel-item" data-bs-interval="4000">
+      <img src="assets/img/photo-1529156069898-49953e39b3ac.avif" class="d-block w-100" style="height: 380px; object-fit: cover;" alt="ملتقى الطلاب والأفكار">
+      <div class="carousel-caption d-none d-md-block bg-dark bg-opacity-75 rounded-3 p-3">
+        <h3 class="h5 fw-bold text-white">ملتقى الطلاب والأفكار المبتكرة</h3>
+        <p class="small text-white-50">مساحة مفتوحة للتعارف وتبادل الأفكار والمبادرات الطلابية.</p>
+        <a href="event.html?id=2" class="btn btn-primary btn-sm">عرض التفاصيل</a>
+      </div>
+    </div>
+
+    <!-- الشريحة الثالثة: أمسية المواهب الفنية -->
+    <div class="carousel-item" data-bs-interval="4000">
+      <img src="assets/img/photo-1501386761578-eac5c94b800a.avif" class="d-block w-100" style="height: 380px; object-fit: cover;" alt="أمسية المواهب الفنية">
+      <div class="carousel-caption d-none d-md-block bg-dark bg-opacity-75 rounded-3 p-3">
+        <h3 class="h5 fw-bold text-white">أمسية المواهب الفنية</h3>
+        <p class="small text-white-50">أمسية فنية تحتفي بالمواهب والإبداع الطلابي.</p>
+        <a href="event.html?id=3" class="btn btn-primary btn-sm">عرض التفاصيل</a>
+      </div>
+    </div>
+  </div>
+
+  <button class="carousel-control-prev" type="button" data-bs-target="#featuredCarousel" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">السابق</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#featuredCarousel" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">التالي</span>
+  </button>
+</div>
+                <div class="row g-4">
+  <!-- 1. مؤتمر الذكاء الاصطناعي (id=1) -->
+  <div class="col-md-4">
+    <div class="card h-100 shadow-sm border-0 rounded-4 overflow-hidden">
+      <img src="assets/img/photo-1516321318423-f06f85e504b3.avif" class="card-img-top" style="height: 190px; object-fit: cover;" alt="مؤتمر الذكاء الاصطناعي" />
+      <div class="card-body d-flex flex-column">
+        <div class="d-flex justify-content-between align-items-center mb-2">
+          <span class="badge bg-info text-dark">ثقافة ومعرفة</span>
+          <small class="text-muted">2026-10-25</small>
+        </div>
+        <h3 class="h5 card-title fw-bold">مؤتمر الذكاء الاصطناعي وتقنيات الويب الحديثة 2026</h3>
+        <p class="card-text text-muted small flex-grow-1">ملتقى علمي يستعرض أحدث تطبيقات الذكاء الاصطناعي وتطوير تطبيقات الويب لطلاب الهندسة المعلوماتية.</p>
+        <a href="event.html?id=1" class="btn btn-outline-primary btn-sm mt-3 w-100">التفاصيل</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- 2. ملتقى الطلاب والأفكار (id=2) -->
+  <div class="col-md-4">
+    <div class="card h-100 shadow-sm border-0 rounded-4 overflow-hidden">
+      <img src="assets/img/photo-1529156069898-49953e39b3ac.avif" class="card-img-top" style="height: 190px; object-fit: cover;" alt="ملتقى الطلاب والأفكار" />
+      <div class="card-body d-flex flex-column">
+        <div class="d-flex justify-content-between align-items-center mb-2">
+          <span class="badge bg-warning text-dark">مجتمع وطلاب</span>
+          <small class="text-muted">2026-10-30</small>
+        </div>
+        <h3 class="h5 card-title fw-bold">ملتقى الطلاب والأفكار المبتكرة</h3>
+        <p class="card-text text-muted small flex-grow-1">مساحة مفتوحة للتعارف وتبادل الأفكار والمبادرات الطلابية.</p>
+        <a href="event.html?id=2" class="btn btn-outline-primary btn-sm mt-3 w-100">التفاصيل</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- 3. أمسية المواهب الفنية (id=3) -->
+  <div class="col-md-4">
+    <div class="card h-100 shadow-sm border-0 rounded-4 overflow-hidden">
+      <img src="assets/img/photo-1501386761578-eac5c94b800a.avif" class="card-img-top" style="height: 190px; object-fit: cover;" alt="أمسية المواهب الفنية" />
+      <div class="card-body d-flex flex-column">
+        <div class="d-flex justify-content-between align-items-center mb-2">
+          <span class="badge bg-danger">فن وموسيقى</span>
+          <small class="text-muted">2026-11-02</small>
+        </div>
+        <h3 class="h5 card-title fw-bold">أمسية المواهب الفنية</h3>
+        <p class="card-text text-muted small flex-grow-1">أمسية فنية تحتفي بالمواهب والإبداع الطلابي.</p>
+        <a href="event.html?id=3" class="btn btn-outline-primary btn-sm mt-3 w-100">التفاصيل</a>
+      </div>
+    </div>
+  </div>
+</div>
+    </main>
+
+    <!-- Scroll-to-top button (bonus feature) -->
+    <button id="scrollTopBtn" type="button" title="الصعود إلى أعلى الصفحة" aria-label="الصعود إلى أعلى الصفحة">
+        <span aria-hidden="true">↑</span>
+    </button>
+
+    <!-- ========================================== -->
+    <!-- Shared page footer -->
+    <!-- ========================================== -->
+    <footer class="site-footer">
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-md-5">
+                    <div class="d-inline-flex align-items-center gap-2 mb-3">
+                        <img src="assets/img/logo.svg" alt="SVU Logo" width="40" height="40" />
+                        <h5 class="text-white fw-bold mb-0">دليل فعاليات الجامعة الافتراضية السورية</h5>
+                    </div>
+                    <p class="small mb-2">
+                        المنصة الرسمية لاستعراض ومتابعة كافة المؤتمرات العلمية، الأنشطة الثقافية، البطولات الرياضية، واللقاءات الطلابية في الجامعة الافتراضية السورية (SVU).
+                    </p>
+                    <p class="small text-accent mb-0">مشروع مقرر برمجة الويب <strong>BWP401</strong> | إشراف: <strong>د. باسل الخطيب</strong></p>
+                </div>
+                <div class="col-md-3">
+                    <h6 class="text-white fw-bold mb-3">روابط سريعة</h6>
+                    <ul class="list-unstyled small d-inline-flex flex-column gap-2">
+                        <li><a href="index.html">الصفحة الرئيسية</a></li>
+                        <li><a href="events.html">كل الفعاليات</a></li>
+                        <li><a href="about.html">عن الدليل وفريق العمل</a></li>
+                        <li><a href="contact.html">اتصل بنا</a></li>
+                        <li><a href="about.html#photoCredits">مصادر الصور</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-4">
+                    <h6 class="text-white fw-bold mb-3">معلومات التواصل والسوشيال</h6>
+                    <p class="small mb-1">البريد الرسمي: <a href="mailto:t_balkhatib@svuonline.org">t_balkhatib@svuonline.org</a></p>
+                    <p class="small mb-1">موقع الجامعة: <a href="https://www.svuonline.org" target="_blank" rel="noopener">www.svuonline.org</a></p>
+                    <p class="small mb-3">العنوان: دمشق - المزة - مبنى وزارة التعليم العالي</p>
+                    <div class="d-inline-flex gap-2 social-links">
+                        <a href="https://www.facebook.com" target="_blank" rel="noopener" class="btn btn-outline-light btn-sm rounded-pill" aria-label="Facebook" title="Facebook"><img src="assets/icons/facebook.svg" alt="" class="ui-icon" aria-hidden="true" /></a>
+                        <a href="https://www.linkedin.com" target="_blank" rel="noopener" class="btn btn-outline-light btn-sm rounded-pill" aria-label="LinkedIn" title="LinkedIn"><img src="assets/icons/linkedin.svg" alt="" class="ui-icon" aria-hidden="true" /></a>
+                        <a href="https://telegram.org" target="_blank" rel="noopener" class="btn btn-outline-light btn-sm rounded-pill" aria-label="Telegram" title="Telegram"><img src="assets/icons/telegram.svg" alt="" class="ui-icon" aria-hidden="true" /></a>
+                    </div>
+                </div>
+            </div>
+            <hr class="footer-rule my-4" />
+            <div class="text-center small">
+                2026 جميع الحقوق محفوظة - الجامعة الافتراضية السورية (SVU) | وظيفة مقرر BWP401
+            </div>
+        </div>
+    </footer>
+
+    <!-- Load Bootstrap JavaScript and the main interactive script -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/js/main.js"></script>
+    <script>
+        // تشغيل سلايدر الفعاليات البارزة تلقائياً كل 4 ثوانٍ
+        const sliderElement = document.querySelector("#featuredSlider");
+        if (sliderElement) {
+            new bootstrap.Carousel(sliderElement, {
+                interval: 4000,
+                ride: "carousel",
+            });
+        }
+    </script>
+</body>
+</html>
