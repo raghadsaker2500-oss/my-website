@@ -1,0 +1,534 @@
+/* Define the shared theme colors and Bootstrap color overrides. */
+:root{--ink:#0f172a;--muted:#64748b;--purple:#4f46e5;--deep:#0f172a;--orange:#059669;--line:#e2e8f0;--soft:#f8fafc;--bs-primary:#0f172a;--bs-primary-rgb:15,23,42;--bs-secondary:#4f46e5;--bs-secondary-rgb:79,70,229;--bs-success:#059669;--bs-success-rgb:5,150,105;--bs-body-color:#0f172a;--bs-secondary-color:#64748b;--bs-link-color:#4f46e5;--bs-link-hover-color:#3730a3}
+/* Include padding and borders in each element's dimensions. */
+*{box-sizing:border-box}
+/* Set the base font, text color, line height, and page margin. */
+body{font-family:Cairo,sans-serif;color:var(--ink);line-height:1.8;margin:0}
+/* Remove underlines from links by default. */
+a{text-decoration:none}
+/* Apply a dark-to-purple gradient to the top banner. */
+.top{background:linear-gradient(110deg,var(--deep),var(--purple))}
+/* Set vertical spacing for the navigation bar. */
+.navbar{padding:14px 0}
+/* Arrange the brand content horizontally and emphasize its text. */
+.navbar-brand{color:white;font-weight:800;display:flex;align-items:center;gap:10px}
+/* Style small supporting text inside the brand. */
+.navbar-brand small{display:block;font-size:11px;color:#dcd9ff}
+/* Create a centered, rounded logo badge. */
+.logo{display:grid;place-items:center;width:43px;height:43px;border-radius:14px;background:var(--orange);font-size:24px}
+/* Set the default navigation link color. */
+.nav-link{color:#e8e6ff!important}
+/* Highlight navigation links on hover. */
+.nav-link:hover{color:white!important}
+/* Set the shared button shape, weight, and padding. */
+.btn{border-radius:12px;font-weight:700;padding:.7rem 1.1rem}
+/* Style the warm accent button. */
+.btn-warm{background:var(--orange);color:#fff;border-color:var(--orange)}
+/* Change the warm button color on hover. */
+.btn-warm:hover{background:#ed6548;color:white}
+/* Add vertical spacing around page sections. */
+.section{padding:72px 0}
+/* Arrange section headings and their adjacent content. */
+.heading{display:flex;justify-content:space-between;align-items:end;gap:20px;margin-bottom:28px}
+/* Set the size and weight of section heading titles. */
+.heading h2{font-weight:800;font-size:clamp(1.6rem,3vw,2.2rem);margin:5px 0}
+/* Style supporting text within section headings. */
+.heading p{color:var(--muted);margin:0}
+/* Keep heading links prominent and on one line. */
+.heading>a{font-weight:800;color:var(--purple);white-space:nowrap}
+/* Set the layout and appearance of event cards. */
+.cardx{height:100%;border:1px solid var(--line);border-radius:20px;overflow:hidden;background:#fff}
+/* Use palette-based surfaces and shadows for both card themes. */
+:root {
+    --card-hover-bg: #f5f5ff;
+    --card-hover-ring: rgba(79, 70, 229, .32);
+    --card-hover-shadow: 0 14px 32px rgba(15, 23, 42, .10), 0 4px 12px rgba(79, 70, 229, .08);
+}
+body.dark-mode {
+    --card-hover-bg: #252d49;
+    --card-hover-ring: rgba(129, 140, 248, .58);
+    --card-hover-shadow: 0 16px 36px rgba(0, 0, 0, .28), 0 4px 18px rgba(79, 70, 229, .16);
+}
+.card,.cardx {
+    transition: transform .25s ease, box-shadow .25s ease, background-color .25s ease, border-color .25s ease;
+}
+/* Match keyboard feedback to pointer feedback; inset rings also work on borderless cards. */
+:is(.card, .cardx):not(.hero-table):focus-within {
+    background-color: var(--card-hover-bg) !important;
+    box-shadow: inset 0 0 0 1px var(--card-hover-ring), var(--card-hover-shadow) !important;
+}
+@media (hover: hover) and (pointer: fine) {
+    :is(.card, .cardx):not(.hero-table):hover {
+        transform: translateY(-5px);
+        background-color: var(--card-hover-bg) !important;
+        box-shadow: inset 0 0 0 1px var(--card-hover-ring), var(--card-hover-shadow) !important;
+    }
+}
+@media (prefers-reduced-motion: reduce) {
+    .card,.cardx { transition: none; }
+    :is(.card, .cardx):not(.hero-table):hover { transform: none; }
+}
+/* Make event card images fill the card with a fixed crop. */
+.cardx>img{width:100%;height:205px;object-fit:cover}
+/* Add inner spacing to event card content. */
+.pad{padding:21px}
+/* Style event card titles. */
+.pad h3{font-weight:800;font-size:1.12rem;margin:12px 0 8px}
+/* Style event card descriptions. */
+.pad p{color:var(--muted);font-size:.9rem}
+/* Distinguish culture category labels. */
+.tag-culture{background:#fff0e9;color:#b34b31}
+/* Distinguish sports category labels. */
+.tag-sport{background:#e7f7ef;color:#18774a}
+/* Distinguish music category labels. */
+.tag-music{background:#f0edff;color:#5744bd}
+/* Distinguish social category labels. */
+.tag-social{background:#fff7df;color:#88620c}
+/* Style secondary event metadata. */
+.meta{color:var(--muted);font-size:.8rem}
+/* Set the hero section's gradient, spacing, and text color. */
+.pagehero{background:linear-gradient(115deg,var(--deep),var(--purple));padding:55px 0;color:white}
+/* Size and emphasize the hero heading. */
+.pagehero h1{font-size:clamp(2rem,4vw,3.2rem);font-weight:800;margin:12px 0}
+/* Set the hero paragraph color. */
+.pagehero p{color:#e2dfff}
+/* Style the small introductory label above the hero heading. */
+.hero-eyebrow{display:inline-block;color:#c7d2fe;font-size:.9rem;font-weight:700;letter-spacing:.02em}
+/* Set right-to-left flow for the home hero row. */
+.home-hero .row{direction:rtl}
+/* Limit the home hero heading width. */
+.home-hero h1{max-width:14ch}
+/* Limit the home hero paragraph width and set its font size. */
+.home-hero p{max-width:38rem;font-size:1.05rem}
+/* Align and color the participant table card content. */
+.hero-table{color:var(--ink);text-align:right}
+/* Style the participant table card header. */
+.hero-table .card-header{background:#fff;color:var(--ink)}
+/* Add padding inside the participant table card body. */
+.hero-table .card-body{padding:1rem}
+/* Set the participant table font size. */
+.hero-table .table{font-size:.9rem}
+/* Set padding for participant table cells. */
+.hero-table .table>:not(caption)>*>*{padding:.45rem .55rem}
+/* Allow the participant table to scroll horizontally when needed. */
+.hero-table .table-responsive{overflow-x:auto}
+/* Style the breadcrumb container. */
+.crumb{margin-top:15px;color:#d5d2ff;font-size:.85rem}
+/* Style links in the breadcrumb. */
+.crumb a{color:white}
+@media (max-width:575px) {
+    /* Tighten the home hero and participant table on narrow screens. */
+    .home-hero .row{gap:1.25rem 0}
+    .hero-table .card-body{padding:.75rem}
+    .hero-table .table{font-size:.8rem}
+    .hero-table .table>:not(caption)>*>*{padding:.35rem .4rem}
+}
+/* Add space below the event filters. */
+.filters{margin-bottom:24px}
+/* Adjust spacing below headings in the filter area. */
+.filters .heading{margin-bottom:18px}
+/* Compact, accessible icon actions beside the event filters. */
+.filter-action {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 42px;
+    height: 42px;
+    padding: 0;
+    flex-shrink: 0;
+}
+.btn-filter-reset {
+    --bs-btn-color: #4f46e5;
+    --bs-btn-border-color: #4f46e5;
+    --bs-btn-hover-color: #fff;
+    --bs-btn-hover-bg: #4f46e5;
+    --bs-btn-hover-border-color: #4f46e5;
+    --bs-btn-active-color: #fff;
+    --bs-btn-active-bg: #3730a3;
+    --bs-btn-active-border-color: #3730a3;
+}
+body.dark-mode .btn-filter-reset {
+    --bs-btn-color: #c7d2fe;
+    --bs-btn-border-color: #818cf8;
+}
+/* Arrange the results summary and style its text. */
+.resultbar{display:flex;justify-content:space-between;gap:10px;margin:20px 0;color:var(--muted);font-size:.85rem}
+/* Center and space the empty-results message. */
+.empty{text-align:center;padding:50px}
+/* Set the footer background, text alignment, and spacing. */
+footer{background:#211d59;color:#d9d6fa;text-align:center;padding:38px 0 24px}
+/* Emphasize footer headings. */
+footer h3{font-size:1.2rem;color:white;font-weight:800}
+/* Set footer paragraph spacing. */
+footer p{margin:4px}
+/* Set the footer link color. */
+footer a{color:#e4e1ff}
+/* Display and space small footer text. */
+footer small{display:block;color:#aaa6db;margin-top:18px}
+/* Position and style the legacy back-to-top button. */
+#topBtn{position:fixed;bottom:20px;left:20px;width:44px;height:44px;border:0;border-radius:14px;background:var(--orange);color:white;font-size:1.3rem;display:none;z-index:20}
+/* Reveal the legacy back-to-top button when active. */
+#topBtn.show{display:block}
+/* Adapt the layout for screens narrower than 576 pixels. */
+@media (max-width:575px) 
+{
+/* Reduce section spacing on narrow screens. */
+.section{padding:52px 0}
+/* Align section headings to the start on narrow screens. */
+.heading{align-items:flex-start}
+/* Reduce event card image height on narrow screens. */
+.cardx>img{height:185px}
+/* Reduce hero section spacing on narrow screens. */
+.pagehero{padding:42px 0}
+/* Add inner spacing to filters on narrow screens. */
+.filters{padding:17px}
+/* Stack results summary content vertically on narrow screens. */
+.resultbar{flex-direction:column}
+}
+
+/* Create a circular gradient avatar for team members. */
+.team-avatar {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+    background: linear-gradient(135deg, var(--deep), var(--purple));
+    color: #fff;
+}
+
+/* Shared navigation styles */
+/* Apply the dark background to the shared navigation bars. */
+.navbar, .site-navbar {
+    background-color: var(--deep) !important;
+}
+
+    /* Set the default color of navigation links. */
+    .navbar .nav-link {
+        color: #ffffff !important;
+    }
+
+        /* Highlight active and hovered navigation links. */
+        .navbar .nav-link:hover, .navbar .nav-link.active {
+            color: var(--orange) !important;
+        }
+
+
+
+/* Shared logo image styles */
+/* Size and contain shared logo images. */
+.brand-logo-img {
+    width: 40px !important;
+    height: 40px !important;
+    object-fit: contain;
+    border-radius: 50%;
+    background-color: #ffffff;
+}
+
+/* Center the dark mode toggle icon and define its border. */
+#darkModeToggle {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-color: rgba(255, 255, 255, 0.4);
+}
+
+    /* Highlight the dark mode toggle when hovered. */
+    #darkModeToggle:hover {
+        background-color: var(--secondary-color, #0284c7);
+        border-color: var(--secondary-color, #0284c7);
+    }
+/* Shared visual system */
+/* Set the page background and default text color. */
+body {
+    background-color: var(--soft);
+    color: var(--ink);
+}
+
+/* Apply the shared dark background to navigation bars. */
+.navbar,
+.site-navbar {
+    background: var(--deep) !important;
+}
+
+/* Size and style the navbar brand logo. */
+.navbar-brand-logo,
+.brand-logo-img {
+    width: 42px;
+    height: 42px;
+    object-fit: contain;
+    padding: 3px;
+    border-radius: 12px;
+    background: #fff;
+}
+
+/* Set the secondary navbar brand text color. */
+.navbar-brand small {
+    color: #cbd5e1 !important;
+}
+
+/* Style navbar links and their transitions. */
+.navbar .nav-link {
+    color: #cbd5e1 !important;
+    border-radius: 10px;
+    padding-inline: .85rem;
+    transition: color .2s ease, background-color .2s ease;
+}
+
+/* Highlight active and hovered navbar links. */
+.navbar .nav-link:hover,
+.navbar .nav-link.active {
+    color: #fff !important;
+    background-color: #4f46e533;
+}
+
+/* Invert the theme icon for visibility on the dark navbar. */
+.navbar #themeIcon {
+    filter: brightness(0) invert(1);
+}
+
+/* Style the responsive navbar toggle button. */
+.navbar-toggler {
+    border-color: #ffffff55;
+    border-radius: 10px;
+}
+
+/* Set shared button shape, weight, and transition behavior. */
+.btn {
+    border-radius: 10px;
+    font-weight: 700;
+    transition: color .2s ease, background-color .2s ease, border-color .2s ease, transform .2s ease;
+}
+
+/* Keep pill buttons consistent with the shared button shape. */
+.btn.rounded-pill {
+    border-radius: 10px !important;
+}
+
+/* Define the primary button colors and states. */
+.btn-primary {
+    --bs-btn-color: #fff;
+    --bs-btn-bg: #0f172a;
+    --bs-btn-border-color: #0f172a;
+    --bs-btn-hover-color: #fff;
+    --bs-btn-hover-border-color: #1e293b;
+    --bs-btn-active-bg: #334155;
+    --bs-btn-active-border-color: #334155;
+}
+
+/* Define the outlined primary button colors and states. */
+.btn-outline-primary {
+    --bs-btn-color: #0f172a;
+    --bs-btn-border-color: #0f172a;
+    --bs-btn-hover-color: #fff;
+    --bs-btn-hover-bg: #0f172a;
+    --bs-btn-hover-border-color: #0f172a;
+    --bs-btn-active-bg: #1e293b;
+    --bs-btn-active-border-color: #1e293b;
+}
+
+/* Define the secondary button colors and states. */
+.btn-secondary,
+.btn-outline-secondary {
+    --bs-btn-color: #4f46e5;
+    --bs-btn-bg: #4f46e5;
+    --bs-btn-border-color: #4f46e5;
+    --bs-btn-hover-color: #fff;
+    --bs-btn-hover-bg: #3730a3;
+    --bs-btn-hover-border-color: #3730a3;
+}
+
+/* Keep the outlined secondary button transparent by default. */
+.btn-outline-secondary {
+    --bs-btn-color: #4f46e5;
+    --bs-btn-bg: transparent;
+    --bs-btn-border-color: #4f46e5;
+}
+
+/* Set the accent button color. */
+/* Keep quick categories and the all-events action consistent in both themes. */
+.palette-outline {
+    --outline-accent: var(--bs-btn-border-color);
+    --outline-on-accent: #fff;
+    color: var(--outline-accent);
+    border-color: var(--outline-accent);
+    background-color: transparent;
+}
+.palette-outline:is(.btn-outline-warning, .btn-outline-info) {
+    --outline-on-accent: #000;
+}
+body.dark-mode .palette-outline.btn-outline-primary {
+    --outline-accent: #a5b4fc;
+    --outline-on-accent: #000;
+}
+.palette-outline:is(:hover, :focus-visible, :active) {
+    color: var(--outline-on-accent);
+    background-color: var(--outline-accent);
+    border-color: var(--outline-accent);
+}
+
+/* Set the accent button color. */
+.btn-warm {
+    background: #059669;
+    border-color: #059669;
+    color: #fff;
+}
+
+/* Darken the accent button on hover. */
+.btn-warm:hover {
+    background: #047857;
+    border-color: #047857;
+    color: #fff;
+}
+
+/* Set the shared footer background and text color. */
+footer,
+.site-footer {
+    background: #0f172a !important;
+    color: #cbd5e1 !important;
+}
+
+/* Allow footer grid columns to shrink without overflowing. */
+.site-footer .row > [class*="col-"] {
+    min-width: 0;
+}
+
+/* Set footer heading text to white. */
+.site-footer h5,
+.site-footer h6 {
+    color: #fff !important;
+}
+
+/* Set footer descriptive text to the shared light color. */
+.site-footer p,
+.site-footer .text-secondary,
+.site-footer .text-white-50,
+.site-footer small {
+    color: #cbd5e1 !important;
+}
+
+/* Style footer links and their color transition. */
+.site-footer a {
+    color: #cbd5e1 !important;
+    transition: color .2s ease;
+}
+
+/* Highlight footer links on hover. */
+.site-footer a:hover {
+    color: #a5b4fc !important;
+}
+
+/* Set the footer divider color and opacity. */
+.site-footer hr,
+.site-footer .footer-rule {
+    border-color: #475569 !important;
+    opacity: .7;
+}
+
+/* Position and style the scroll-to-top button. */
+#scrollTopBtn {
+    position: fixed;
+    inset-inline-start: 20px;
+    bottom: 20px;
+    z-index: 20;
+    display: none;
+    width: 44px;
+    height: 44px;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    border: 0;
+    border-radius: 12px;
+    background: #4f46e5;
+    color: #fff;
+    font-size: 1.25rem;
+    line-height: 1;
+    box-shadow: 0 8px 20px #0f172a33;
+}
+
+/* Adjust footer columns for medium and larger screens. */
+@media (min-width: 768px) {
+    /* Use three equal-width columns in the footer on larger screens. */
+    .site-footer .row > [class*="col-"] {
+        flex: 0 0 33.333333%;
+        max-width: 33.333333%;
+    }
+}
+
+/* Apply the dark theme colors to the page and shared surfaces. */
+body.dark-mode {
+    background-color: #121a2b !important;
+    color: #e2e8f0 !important;
+}
+
+body.dark-mode .bg-light {
+    background-color: #1e293b !important;
+    color: #e2e8f0 !important;
+}
+
+body.dark-mode .text-primary {
+    color: #c7d2fe !important;
+}
+
+body.dark-mode .text-secondary,
+body.dark-mode .text-white-50 {
+    color: #cbd5e1 !important;
+}
+
+/* Keep cards dark and their text readable throughout the site. */
+body.dark-mode .card,
+body.dark-mode .cardx,
+body.dark-mode .modal-content {
+    background-color: #1e293b !important;
+    color: #e2e8f0 !important;
+    border-color: #334155 !important;
+}
+
+body.dark-mode .card :not(.badge):not(.btn),
+body.dark-mode .cardx :not(.badge):not(.btn) {
+    color: #e2e8f0 !important;
+}
+
+body.dark-mode .card .text-muted,
+body.dark-mode .cardx .text-muted,
+body.dark-mode .card .text-secondary,
+body.dark-mode .cardx .text-secondary,
+body.dark-mode .heading p,
+body.dark-mode .pad p,
+body.dark-mode .meta,
+body.dark-mode .text-muted {
+    color: #cbd5e1 !important;
+}
+
+body.dark-mode .hero-table .card-header,
+body.dark-mode .card .card-header {
+    background-color: #334155 !important;
+    color: #e2e8f0 !important;
+    border-color: #475569 !important;
+}
+
+body.dark-mode .hero-table .table > :not(caption) > * > * {
+    background-color: #1e293b !important;
+    color: #e2e8f0 !important;
+    border-color: #475569 !important;
+}
+
+/* Keep outlined card actions readable on dark resting and highlighted surfaces. */
+body.dark-mode :is(.card, .cardx) .btn-outline-primary {
+    --bs-btn-color: #c7d2fe;
+    --bs-btn-border-color: #818cf8;
+    --bs-btn-hover-color: #fff;
+    --bs-btn-hover-bg: #4f46e5;
+    --bs-btn-hover-border-color: #4f46e5;
+    --bs-btn-active-bg: #3730a3;
+    --bs-btn-active-border-color: #3730a3;
+    --bs-btn-active-color: #fff;
+}
+
+/* Restyle form controls in dark mode. */
+body.dark-mode .form-control,
+body.dark-mode .form-select {
+    background-color: #1e293b !important;
+    color: #f8fafc !important;
+    border-color: #475569 !important;
+}
